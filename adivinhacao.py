@@ -4,9 +4,8 @@ print ("------------------------------------")
 
 numero_secreto = 20
 tentativas = 3
-rodada = 1
 
-while (rodada <= tentativas):
+for rodada in range (1, tentativas + 1):
     print ("Tentativa {} de {}". format (rodada , tentativas))
     chute_str = input("Digite o seu número: ")
     print ("Você digitou " , chute_str)
@@ -18,14 +17,13 @@ while (rodada <= tentativas):
 
     if (acertou):
         print ("Você acertou!")
+        break
 
     else:
         if (chute_maior):
             print ("Você errou! Tente algo mais baixo")
         elif (chute_menor):
             print ("Você errou! Tente algo mais alto")
-    
-    rodada = rodada + 1
 
 print ("------------------")
 print ("| Fim do jogo!!! |")

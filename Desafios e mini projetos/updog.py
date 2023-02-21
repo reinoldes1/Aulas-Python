@@ -2,17 +2,20 @@ print ("---------")
 print ("| Updog |")
 print ("---------")
 
-resposta_certa = ("Whats updog?") 
+resposta_certa = ("whats updog?")
 
-#("whats updog?") ("What's updog?") ("what's updog?")
+#("Whats updog?") ("What's updog?") ("what's updog?")
 
 
+while (resposta_certa):
 
-chute = input("You know updog?: ")
+    chute = input ("You know updog?: ")
 
-acertou = resposta_certa == chute
-
-if (acertou):
-    print ("Good what about u?")
-else:
-    print ("I hate you")
+    acertou = resposta_certa == chute
+        
+    if (acertou):
+        print ("Good what about u?")
+        break
+    
+    else:
+        print ("Try again")
