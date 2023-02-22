@@ -1,9 +1,14 @@
+import random
+
+
 print ("------------------------------------")
 print ("| Bem vindo ao jogo de adivinhação |")
 print ("------------------------------------")
 
-numero_secreto = 20
-tentativas = 3
+numero_secreto = round (random.randrange (1, 101))
+tentativas = 8
+
+print (numero_secreto)
 
 for rodada in range (1, tentativas + 1):
     print ("Tentativa {} de {}". format (rodada , tentativas))
