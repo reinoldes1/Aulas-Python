@@ -7,6 +7,27 @@ def jogar():
     print ("| Bem vindo ao jogo de forca |")
     print ("------------------------------")
 
+    palavra_secreta = "biblioteca"
+    letras_certas = ["_ , _ , _ , _ , _ , _ , _ , _ , _ , _"]
+    
+    
+    enforcado = False
+    acertou = False
+
+    while (not enforcado and not acertou):
+        
+        chute = input ("Escolha uma letra: ")
+        chute = chute.strip()
+
+        index = 0
+        for letra in palavra_secreta:
+            if (chute.upper() == letra.upper()):
+                letras_certas [index] = letra
+            index = index + 1
+
+        print (letras_certas)
+
+
     print ("------------------")
     print ("| Fim do jogo!!! |")
     print ("------------------")
