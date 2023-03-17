@@ -7,7 +7,7 @@ def select_game():
     print ("| Escolha o seu jogo! |")
     print ("-----------------------")
 
-    print ("(1) Forca (2) Adivinhação")
+    print ("(1) Forca (2) Adivinhação (3) Sair")
 
     jogo = int (input ("Qual jogo? "))
 
@@ -17,6 +17,10 @@ def select_game():
     elif (jogo == 2):
         print ("Você escolheu Adivinhação")
         adivinhacao.jogar()
+    elif (jogo == 3):
+        print ("Obrigado por jogar!")
+    else:
+        print ("Selecione uma opção valida")    
 
 if(__name__ == "__main__"):
     select_game()

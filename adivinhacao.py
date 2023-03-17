@@ -53,21 +53,19 @@ def jogar():
             pontos_perdidos = abs (numero_secreto - chute)
             pontos = pontos - pontos_perdidos
 
-    print ("------------------")
-    print ("| Fim do jogo!!! |")
-    print ("------------------")
-
-
     #Mostrar o numero secreto
 
     if (numero_secreto != chute ):
         print ("O seu número era: " , (numero_secreto))
 
+    print ("------------------")
+    print ("| Fim do jogo!!! |")
+    print ("------------------")
 
-    #Seleção de jogar novamente ou retornar a escolha
+    #Seleção de jogar novamente
 
     print ("Deseja jogar de novo ou escolher outro jogo?")
-    print ("(1) Jogar novamente (2) Voltar a seleção de jogos")
+    print ("(1) Jogar novamente (2) Voltar a seleção de jogos (3) Sair")
 
     escolha = int (input ())
 
@@ -75,6 +73,8 @@ def jogar():
         jogar()
     elif (escolha == 2):
         jogos.select_game()
+    elif (escolha == 3):
+        print ("Obrigado por jogar!")
     else:
         print ("Selecione uma opção valida")
 

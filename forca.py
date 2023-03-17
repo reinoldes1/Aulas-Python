@@ -8,7 +8,7 @@ def jogar():
     print ("------------------------------")
 
     palavra_secreta = "biblioteca".upper()
-    letras_certas = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+    letras_certas = ["_" for letra in palavra_secreta]
     
     
     enforcado = False
@@ -29,6 +29,7 @@ def jogar():
     
         else:
             tentativas += 1
+            print("Você errou! faltam {} tentativas" .format (6 - tentativas))
 
         enforcado = tentativas == 6
         acertou = "_" not in letras_certas
@@ -49,9 +50,10 @@ def jogar():
     print ("| Fim do jogo!!! |")
     print ("------------------")
     
-    #Seleção de jogar novamente ou retornar a escolha
+    #Seleção de jogar novamente
+    
     print ("Deseja jogar de novo ou escolher outro jogo?")
-    print ("(1) Jogar novamente (2) Voltar a seleção de jogos")
+    print ("(1) Jogar novamente (2) Voltar a seleção de jogos (3) Sair")
 
     escolha = int (input ())
 
@@ -59,6 +61,8 @@ def jogar():
         jogar()
     elif (escolha == 2):
         jogos.select_game()
+    elif (escolha == 3):
+        print ("Obrigado por jogar!")
     else:
         print ("Selecione uma opção valida")
 
