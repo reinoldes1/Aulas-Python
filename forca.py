@@ -3,26 +3,11 @@ import random
 
 def jogar():
 
-    print ("------------------------------")
-    print ("| Bem vindo ao jogo de forca |")
-    print ("------------------------------")
+    print_opening()
 
-    arquivo = open("palavras.txt", "r")
-    palavras = []
+    palavra_secreta = load_palavra_secreta()
 
-    for linha in arquivo:
-        linha = linha.strip()
-        palavras.append(linha)
-
-
-    arquivo.close()
-
-    numero = random.randrange(0, len(palavras))
-    palavra_secreta = palavras[numero].upper()
-
-    print(palavra_secreta)
-
-    letras_certas = ["_" for letra in palavra_secreta]
+    letras_certas = initialize_letras_acertadas(palavra_secreta)
     
     
     enforcado = False
@@ -60,15 +45,45 @@ def jogar():
             print ("------------------------")
 
 
+
+    print_ending()
+    
+    #Seleção de jogar novamente
+    
+    player_selection()
+
+def print_opening():
+    print ("------------------------------")
+    print ("| Bem vindo ao jogo de forca |")
+    print ("------------------------------")
+
+def load_palavra_secreta():
+    arquivo = open("C:/Users/reinoldes/Desktop/Alura/Aula Python/Aulas-Python/frutas.txt", "r")
+    palavras = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+
+
+    arquivo.close()
+
+    numero = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[numero].upper()
+    return palavra_secreta
+
+def initialize_letras_acertadas(palavra):
+    return ["_" for letra in palavra]
+
+def print_ending():
     print ("------------------")
     print ("| Fim do jogo!!! |")
     print ("------------------")
     
-    #Seleção de jogar novamente
-    
     print ("Deseja jogar de novo ou escolher outro jogo?")
     print ("(1) Jogar novamente (2) Voltar a seleção de jogos (3) Sair")
 
+def player_selection():
     escolha = int (input ())
 
     if (escolha == 1):
