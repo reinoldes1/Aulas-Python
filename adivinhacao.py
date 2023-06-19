@@ -1,21 +1,14 @@
 import jogos
-
+import random
 
 def jogar():
-    import random
-
-
-    print ("------------------------------------")
-    print ("| Bem vindo ao jogo de adivinhação |")
-    print ("------------------------------------")
+    
+    print_opening()
+    
 
     numero_secreto = round (random.randrange (1, 101))
     tentativas = 0
     pontos = 1000
-
-    #print (numero_secreto)
-    print ("Selecione a dificuldade:")
-    print ("(1) Fácil (2) Médio (3) Difícil")
 
     nivel = int (input ())
 
@@ -53,19 +46,13 @@ def jogar():
             pontos_perdidos = abs (numero_secreto - chute)
             pontos = pontos - pontos_perdidos
 
-    #Mostrar o numero secreto
-
+    #Mostrar o numero secreto 
     if (numero_secreto != chute ):
         print ("O seu número era: " , (numero_secreto))
 
-    print ("------------------")
-    print ("| Fim do jogo!!! |")
-    print ("------------------")
+    print_ending()
 
-    #Seleção de jogar novamente
-
-    print ("Deseja jogar de novo ou escolher outro jogo?")
-    print ("(1) Jogar novamente (2) Voltar a seleção de jogos (3) Sair")
+    player_selection()
 
     escolha = int (input ())
 
@@ -78,7 +65,37 @@ def jogar():
     else:
         print ("Selecione uma opção valida")
 
+def print_opening():
+    print ("------------------------------------")
+    print ("| Bem vindo ao jogo de adivinhação |")
+    print ("------------------------------------")
+
+    print ("Selecione a dificuldade:")
+    print ("(1) Fácil (2) Médio (3) Difícil")
+
+def print_ending():
+    print ("------------------")
+    print ("| Fim do jogo!!! |")
+    print ("------------------")
+
+    #Seleção de jogar novamente
+
+    print ("Deseja jogar de novo ou escolher outro jogo?")
+    print ("(1) Jogar novamente (2) Voltar a seleção de jogos (3) Sair")
+
+def player_selection():
+    escolha = int (input ())
+
+    if (escolha == 1):
+        jogar()
+    elif (escolha == 2):
+        jogos.select_game()
+    elif (escolha == 3):
+        print ("Obrigado por jogar!")
+    else:
+        print ("Selecione uma opção valida")
 
 #Rodar script direto
+
 if (__name__ == "__main__"):
     jogar()
